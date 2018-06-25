@@ -15,14 +15,3 @@ end
 def position_taken?(board, index)
   board[index] != " "
 end
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
-
-  it 'returns nil or false for a position that is not on the board' do
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    index = 100
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
-end
