@@ -1,29 +1,17 @@
-require_relative "../lib/valid_move.rb"
+# code your #valid_move? method here
+def valid_move?(board, index)
+  #is index valid?
+#if index.between?(0,8)
+#  if position_taken?(board, index)
+  #  false
+#  else
+#    true
+#  end
 
-describe './lib/valid_move.rb' do
-  it 'returns true for a valid position on an empty board' do
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    index = 0
-    expect(valid_move?(board, index)).to be_truthy
-  end
+index.between?(0,8) && !position_taken?(board, index)
+end
 
-  it 'returns true for a valid position on a non-empty board' do
-    board = [" ", " ", "X", " ", " ", " ", " ", "O", " "]
-    index = 5
-    expect(valid_move?(board, index)).to be_truthy
-  end
-
-  it 'returns nil or false for an occupied position' do
-    board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
-    index = 4
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
-
-  it 'returns nil or false for a position that is not on the board' do
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    index = 100
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
+# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
+def position_taken?(board, index)
+  board[index] != " "
 end
